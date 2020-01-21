@@ -23,19 +23,19 @@ namespace Formulário
         {
             int aux = 0;
 
-            ClasseDB testar = new ClasseDB();
+            ClasseDB UsuarioCadastro = new ClasseDB();
 
-            if ((testar.ExisteCadastro() == 1 || Funcao.Text == "Dono(a)") && Senha.Text == ConfirmarSenha.Text  && Nome.Text != "" && Telefone.Text != "" && DatadeNascimento.Text != "" && Usuario.Text != "" && Senha.Text != "" && ConfirmarSenha.Text != "" && Funcao.Text != "" && foto.ImageLocation != null) // Analisar se a senha está correta com a sua confirmação 
+            if ((UsuarioCadastro.ExisteCadastro() == 1 || Funcao.Text == "Dono(a)") && Senha.Text == ConfirmarSenha.Text  && Nome.Text != "" && Telefone.Text != "" && DatadeNascimento.Text != "" && Usuario.Text != "" && Senha.Text != "" && ConfirmarSenha.Text != "" && Funcao.Text != "" && foto.ImageLocation != null) // Analisar se a senha está correta com a sua confirmação 
             {
-                byte[] imagebyte = null;
+                byte[] imagebyte;
 
                 FileStream fstream = new FileStream(this.foto.ImageLocation, FileMode.Open, FileAccess.Read); // Filestream faz a transição de dados, busca de dados por referencia de bytes, armazenamento de dados e entre outros.
-
+                
                 BinaryReader br = new BinaryReader(fstream); // Leitor de binário, ou seja, ler em binário a imagem do diretório fstream
 
                 imagebyte = br.ReadBytes((int)fstream.Length); // Então colocamos esse leitor de binário na nossa imagem. 
 
-                if (testar.ExisteCadastro() == 2)
+                if (UsuarioCadastro.ExisteCadastro() == 2)
                     aux = 1;
 
                 try // Avaliar se a conexão está sendo realizada com sucesso, e previnindo a aparição de um erro desconhecido para o usuário
@@ -43,7 +43,7 @@ namespace Formulário
                     ClasseDB conecta = new ClasseDB();
 
                     
-                    MessageBox.Show(conecta.Cadastrardados(Nome.Text, Telefone.Text, DatadeNascimento.Text, Endereco.Text, Usuario.Text, Senha.Text, Funcao.Text, imagebyte));
+                    MessageBox.Show(conecta.CadastrarDados(Nome.Text, Telefone.Text, DatadeNascimento.Text, Endereco.Text, Usuario.Text, Senha.Text, Funcao.Text, imagebyte));
                     // Fechar o Banco de Dados.
 
                     //Zerando todos os valores após o salvamento com sucesso
@@ -68,7 +68,7 @@ namespace Formulário
                     MessageBox.Show(erro.Message.ToString());
                 }
             }
-            else if (testar.ExisteCadastro() == 2 && Funcao.Text != "Dono(a)") // Mensagem de erro para confirmação da senha.
+            else if (UsuarioCadastro.ExisteCadastro() == 2 && Funcao.Text != "Dono(a)") // Mensagem de erro para confirmação da senha.
             {
                 LabelErro.Text = "Como é o primeiro cadastro deve-se colocar Dono(a)";
                 Funcao.Text = "Dono(a)";
@@ -124,14 +124,14 @@ namespace Formulário
 
         private void Usuario_Validated(object sender, EventArgs e)// Executa no momento que sair do campo de usuário
         {
-            ClasseDB validar = new ClasseDB();
+            ClasseDB ValidarUsuario = new ClasseDB();
 
-            if (validar.Existeusuario(Usuario.Text) == 1) // Validação do Usuário
+            if (ValidarUsuario.ExisteUsuario(Usuario.Text) == 1) // Validação do Usuário
             {
                 MessageBox.Show("Já existe um usuário cadastrado com esse nome, por valor coloque outro.");
                 Usuario.Text = "";
             }
-            else if (validar.Existeusuario(Usuario.Text) == 3)// Problema do banco de dados, algum dado está indo equivocado
+            else if (ValidarUsuario.ExisteUsuario(Usuario.Text) == 3)// Problema do banco de dados, algum dado está indo equivocado
             {
                 MessageBox.Show("Falha ao se comunicar com o banco de dados.");
 
@@ -151,20 +151,19 @@ namespace Formulário
                 {
                     case 0:
 
-                        Telefone.Text = Telefone.Text + "(";
+                        Telefone.Text += "(";
                         Telefone.SelectionStart = 1;
                         break;
 
                     case 3:
 
-                        Telefone.Text = Telefone.Text + ") ";
+                        Telefone.Text += ") ";
                         Telefone.SelectionStart = 5;
                         break;
 
-
                     case 10:
 
-                        Telefone.Text = Telefone.Text + "-";
+                        Telefone.Text += "-";
                         Telefone.SelectionStart = 11;
                         break;
 
@@ -183,13 +182,13 @@ namespace Formulário
             {
                 case 2:
                     
-                    DatadeNascimento.Text = DatadeNascimento.Text + "/";
+                    DatadeNascimento.Text +=  "/";
                     DatadeNascimento.SelectionStart = 3;
                     break;
 
                 case 5:
 
-                    DatadeNascimento.Text = DatadeNascimento.Text + "/";
+                    DatadeNascimento.Text += "/";
                     DatadeNascimento.SelectionStart = 6;
                     break;
 

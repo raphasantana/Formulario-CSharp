@@ -14,12 +14,12 @@ namespace Formulário
 {
     class ClasseDB
     {
-        string conectabanco = "server=localhost;port=3306;User Id = root; database=usuario;password=vertrigo;";// String para se conectar com o o BD
+        const string conectabanco = "server=localhost;port=3306;User Id = root; database=usuario;password=vertrigo;";// String para se conectar com o o BD
 
         MySqlConnection conexao = null; // Criar um objeto de conexão nulo.
         MySqlCommand comando; // Criar um comando objeto de de mysqlcommand.
 
-        public string Cadastrardados(string nome, string telefone, string datanascimento, string endereco, string usuario, string senha, string funcao, byte[] imagem)
+        public string CadastrarDados(string nome, string telefone, string datanascimento, string endereco, string usuario, string senha, string funcao, byte[] imagem)
         {
             try
             {
@@ -54,7 +54,7 @@ namespace Formulário
 
         }
 
-        public int Existeusuario(string nomeusuario)
+        public int ExisteUsuario(string nomeusuario)
         {
             try
             {
@@ -71,16 +71,18 @@ namespace Formulário
 
                 if (registro.HasRows)// Saber se existe alguma linha com os valores do comando, se existir quer dizer que já existe um usuário com esse nome.
                 {
+                    conexao.Close();
                     return 1;
                 }
                 else
                 {
+                    conexao.Close();
                     return 2;
                 }
 
-                conexao.Close();
+                
             }
-            catch (Exception erro)
+            catch
             {
                 return 3;
             }
@@ -100,16 +102,18 @@ namespace Formulário
 
                 if (registro.HasRows)// Saber se existe alguma linha com os valores do comando, se existir quer dizer que já existe um usuário com esse nome.
                 {
+                    conexao.Close();
                     return 1;
                 }
                 else
                 {
+                    conexao.Close();
                     return 2;
                 }
 
-                conexao.Close();
+                
             }
-            catch (Exception erro)
+            catch
             {
                 return 3;
             }
@@ -117,7 +121,7 @@ namespace Formulário
 
 
 
-        public int Login(string usuario, string senha, string funcao)
+        public int EntrarLogin(string usuario, string senha, string funcao)
         {
             try
             {
@@ -135,14 +139,14 @@ namespace Formulário
 
                 if (registro.HasRows)
                 {
+                    conexao.Close();
                     return 1;
                 }
                 else
                 {
+                    conexao.Close();
                     return 2;
-                }
-
-                conexao.Close();
+                }   
             }
             catch
             {
@@ -173,7 +177,7 @@ namespace Formulário
             }
         }
 
-        public int Produtos(string nome, string empresa, string quantidade, string preco, string codigo)
+        public int CadastrarProdutos(string nome, string empresa, string quantidade, string preco, string codigo)
         {
             try
             {

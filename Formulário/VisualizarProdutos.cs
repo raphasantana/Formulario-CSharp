@@ -19,9 +19,9 @@ namespace Formulário
 
         private void VisualizarProdutos_Load(object sender, EventArgs e)
         {
-            ClasseDB Lprodutos = new ClasseDB();
+            ClasseDB Produto = new ClasseDB();
 
-            Lprodutos.ListarProdutos(DG);// Mostrar os valores do banco do Datagrid.
+            Produto.ListarProdutos(DG);// Mostrar os valores do banco do Datagrid.
 
             Salvar.Visible = false;// Deixar esse botao invisível para o usuario quando iniciar.
 

@@ -35,7 +35,7 @@ namespace Formulário
 
         private void VisualizarProdutos_Click(object sender, EventArgs e)
         {
-            new VisualizarColaboradores().Show();
+            new VisualizarProdutos().Show();
         }
     }
 }

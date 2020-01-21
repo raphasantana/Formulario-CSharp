@@ -170,7 +170,7 @@
             this.Nome.MaxLength = 32767;
             this.Nome.Name = "Nome";
             this.Nome.PasswordChar = '\0';
-            this.Nome.PromptText = "Insira seu nome completo";
+            this.Nome.WaterMark = "Insira seu nome completo";
             this.Nome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Nome.SelectedText = "";
             this.Nome.SelectionLength = 0;
@@ -202,7 +202,7 @@
             this.Telefone.MaxLength = 15;
             this.Telefone.Name = "Telefone";
             this.Telefone.PasswordChar = '\0';
-            this.Telefone.PromptText = "(--) ----- ----";
+            this.Telefone.WaterMark = "(--) ----- ----";
             this.Telefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Telefone.SelectedText = "";
             this.Telefone.SelectionLength = 0;
@@ -266,7 +266,7 @@
             this.Endereco.MaxLength = 32767;
             this.Endereco.Name = "Endereco";
             this.Endereco.PasswordChar = '\0';
-            this.Endereco.PromptText = "Insira seu Endereço";
+            this.Endereco.WaterMark = "Insira seu Endereço";
             this.Endereco.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Endereco.SelectedText = "";
             this.Endereco.SelectionLength = 0;
@@ -298,7 +298,7 @@
             this.Usuario.MaxLength = 32767;
             this.Usuario.Name = "Usuario";
             this.Usuario.PasswordChar = '\0';
-            this.Usuario.PromptText = "Insira o Usuário desejado";
+            this.Usuario.WaterMark = "Insira o Usuário desejado";
             this.Usuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Usuario.SelectedText = "";
             this.Usuario.SelectionLength = 0;
@@ -331,7 +331,7 @@
             this.Senha.MaxLength = 32767;
             this.Senha.Name = "Senha";
             this.Senha.PasswordChar = '●';
-            this.Senha.PromptText = "Senha no mínimo de 6 caracteres";
+            this.Senha.WaterMark= "Senha no mínimo de 6 caracteres";
             this.Senha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Senha.SelectedText = "";
             this.Senha.SelectionLength = 0;
@@ -364,7 +364,7 @@
             this.ConfirmarSenha.MaxLength = 32767;
             this.ConfirmarSenha.Name = "ConfirmarSenha";
             this.ConfirmarSenha.PasswordChar = '●';
-            this.ConfirmarSenha.PromptText = "Confirme a senha anterior";
+            this.ConfirmarSenha.WaterMark = "Confirme a senha anterior";
             this.ConfirmarSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ConfirmarSenha.SelectedText = "";
             this.ConfirmarSenha.SelectionLength = 0;

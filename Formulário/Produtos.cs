@@ -17,15 +17,13 @@ namespace Formulário
             InitializeComponent();
         }
 
-
-
         private void Salvar_Click(object sender, EventArgs e)
         {
-            ClasseDB prod = new ClasseDB();
+            ClasseDB Produto = new ClasseDB();
             // Conferir se existe algum campo sem ser preenchido.
             if (Nome.Text != "" && Empresa.Text != "" && Quantidade.Text != "" && Preco.Text != "" && Codigo.Text != "")
             {
-                if (prod.Produtos(Nome.Text, Empresa.Text, Quantidade.Text, Preco.Text, Codigo.Text) == 1) // O método retorna um inteiro, por isso está dentro de um if, analisar o método em ClassDB, mas se igual a 1, o salvamento foi realizado com sucesso.
+                if (Produto.CadastrarProdutos(Nome.Text, Empresa.Text, Quantidade.Text, Preco.Text, Codigo.Text) == 1) // O método retorna um inteiro, por isso está dentro de um if, analisar o método em ClassDB, mas se igual a 1, o salvamento foi realizado com sucesso.
                 {
                     // Limpar todos os campos após o salvamento com sucesso.
                     Nome.Text = "";
@@ -59,7 +57,7 @@ namespace Formulário
 
             if (Preco.Text.Length == 0)// Criar as barras entre os números
             {
-                    Preco.Text = Preco.Text + "R$";
+                    Preco.Text += "R$";
                     Preco.SelectionStart = 2;
             }
         }

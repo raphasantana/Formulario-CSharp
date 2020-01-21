@@ -97,7 +97,7 @@
             this.Nome.MaxLength = 32767;
             this.Nome.Name = "Nome";
             this.Nome.PasswordChar = '\0';
-            this.Nome.PromptText = "Digite o Nome do Produto";
+            this.Nome.WaterMark = "Digite o Nome do Produto";
             this.Nome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Nome.SelectedText = "";
             this.Nome.SelectionLength = 0;
@@ -129,7 +129,7 @@
             this.Empresa.MaxLength = 32767;
             this.Empresa.Name = "Empresa";
             this.Empresa.PasswordChar = '\0';
-            this.Empresa.PromptText = "Digite a Empresa do Produto";
+            this.Empresa.WaterMark = "Digite a Empresa do Produto";
             this.Empresa.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Empresa.SelectedText = "";
             this.Empresa.SelectionLength = 0;
@@ -161,7 +161,7 @@
             this.Quantidade.MaxLength = 32767;
             this.Quantidade.Name = "Quantidade";
             this.Quantidade.PasswordChar = '\0';
-            this.Quantidade.PromptText = "Digite a Qnt.";
+            this.Quantidade.WaterMark = "Digite a Qnt.";
             this.Quantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Quantidade.SelectedText = "";
             this.Quantidade.SelectionLength = 0;
@@ -194,7 +194,7 @@
             this.Preco.MaxLength = 32767;
             this.Preco.Name = "Preco";
             this.Preco.PasswordChar = '\0';
-            this.Preco.PromptText = "Digite o Preço do Produto";
+            this.Preco.WaterMark = "Digite o Preço do Produto";
             this.Preco.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Preco.SelectedText = "";
             this.Preco.SelectionLength = 0;
@@ -250,7 +250,7 @@
             this.Codigo.MaxLength = 32767;
             this.Codigo.Name = "Codigo";
             this.Codigo.PasswordChar = '\0';
-            this.Codigo.PromptText = "Digite o código de barras.";
+            this.Codigo.WaterMark = "Digite o código de barras.";
             this.Codigo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Codigo.SelectedText = "";
             this.Codigo.SelectionLength = 0;

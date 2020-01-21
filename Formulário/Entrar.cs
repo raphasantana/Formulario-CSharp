@@ -19,9 +19,9 @@ namespace Formulário
 
         private void Entrar_Click(object sender, EventArgs e)
         {
-            ClasseDB entrar = new ClasseDB();
+            ClasseDB Entrar = new ClasseDB();
 
-            switch (entrar.Login(Usuario.Text, Senha.Text, Funcao.Text))// Executar o Método Login da ClasseDB.
+            switch (Entrar.EntrarLogin(Usuario.Text, Senha.Text, Funcao.Text))// Executar o Método Login da ClasseDB.
             {
 
                 case 1:
@@ -55,14 +55,12 @@ namespace Formulário
 
         private void Login_Load(object sender, EventArgs e)
         {
-            ClasseDB usuario = new ClasseDB();
+            ClasseDB Cadastro = new ClasseDB();
 
-            switch(usuario.ExisteCadastro())
+            switch(Cadastro.ExisteCadastro()) // Saber se existe algum dado, se não existir, entrar na tela de login, se existir, entrar na tela de login.
             {
                 case 1: 
                     break;
-
-
 
                 case 2:
                     this.Hide();

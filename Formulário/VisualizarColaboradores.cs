@@ -20,11 +20,11 @@ namespace Formulário
 
         private void VisualizarColaboradores_Load(object sender, EventArgs e)
         {
-            ClasseDB listar = new ClasseDB();
+            ClasseDB Lista = new ClasseDB();
 
             Salvar.Visible = false; // Deixar esse botao invisível para o usuario quando iniciar.
 
-            listar.ListarCadastro(DG); // Mostrar os valores do banco do Datagrid.
+            Lista.ListarCadastro(DG); // Mostrar os valores do banco do Datagrid.
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -45,15 +45,15 @@ namespace Formulário
         {
             string usuario = DG.CurrentRow.Cells[4].Value.ToString();
 
-            ClasseDB editar = new ClasseDB();
+            ClasseDB Editar = new ClasseDB();
 
             if (Senhav.Text == ConfimarSenhav.Text && Nomev.Text != "" && Telefonev.Text != "" && DatadeNascimentov.Text != "" && Senhav.Text != "" && ConfimarSenhav.Text != "" && Funcaov.Text != "") // Analisar se os campos estão preenchidos e a  senha está correta com a sua confirmação
             {
-                MessageBox.Show(editar.EditarUsuario(Nomev.Text, Telefonev.Text, DatadeNascimentov.Text, Enderecov.Text, usuario, Senhav.Text, Funcaov.Text));
+                MessageBox.Show(Editar.EditarUsuario(Nomev.Text, Telefonev.Text, DatadeNascimentov.Text, Enderecov.Text, usuario, Senhav.Text, Funcaov.Text));
 
                 Salvar.Visible = false; // Tornando oculto para o usuário novamente.
 
-                editar.ListarCadastro(DG); // Atualizando os campos de DataView
+                Editar.ListarCadastro(DG); // Atualizando os campos de DataView
 
                 //Zerando todos os valores após o salvamento com sucesso
                 Nomev.Text = "";
@@ -89,11 +89,11 @@ namespace Formulário
 
         private void Excluir_Click(object sender, EventArgs e)
         {
-            ClasseDB excluir = new ClasseDB();
+            ClasseDB Excluir = new ClasseDB();
 
-            excluir.ExcluirUsuario(DG.CurrentRow.Cells[4].Value.ToString()); // Para excluir o usuário usasse o PRIMARY KEY da tabela
+            Excluir.ExcluirUsuario(DG.CurrentRow.Cells[4].Value.ToString()); // Para excluir o usuário usasse o PRIMARY KEY da tabela
 
-            excluir.ListarCadastro(DG); // Atualiza o DataView.
+            Excluir.ListarCadastro(DG); // Atualiza o DataView.
         }
     }
 }
