@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using MySql.Data.MySqlClient;
 
+
 namespace Formulário
 {
     public partial class CadastrodeUsuario : MetroFramework.Forms.MetroForm
@@ -136,7 +137,12 @@ namespace Formulário
                 MessageBox.Show("Falha ao se comunicar com o banco de dados.");
 
             }
-
+            // Mínimo de 6 Caractere
+            if(Usuario.Text.Length < 6)
+            {
+                MessageBox.Show("Aumente a quantidade de Caractere do usuário");
+                Usuario.Text = "";
+            }
         }
 
         private void Telefone_KeyPress(object sender, KeyPressEventArgs e)
@@ -192,6 +198,41 @@ namespace Formulário
                     DatadeNascimento.SelectionStart = 6;
                     break;
 
+            }
+        }
+
+        private void Nome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8) // Permitir o BackSpace, obs: precisa ser antes do if de bloquear as letras.
+                return;
+
+            if (char.IsDigit(e.KeyChar)) // Bloquear tudo que nao for número.
+                e.Handled = true;
+        }
+
+        private void DatadeNascimento_Validated(object sender, EventArgs e)
+        {
+            if (DatadeNascimento.Text.Length < 10) {
+                MessageBox.Show("Complete a Data de Nascimento");
+                DatadeNascimento.Text = "";
+            }
+        }
+
+        private void Telefone_Validated(object sender, EventArgs e)
+        {
+            if (Telefone.Text.Length < 14)
+            {
+                MessageBox.Show("Complete o número do Telefone");
+                Telefone.Text = "";
+            }
+        }
+
+        private void Senha_Validated(object sender, EventArgs e)
+        {
+            if(Senha.Text.Length < 6)
+            {
+                MessageBox.Show("Número de caracteres da senha menor que 6 !!");
+                Senha.Text = "";
             }
         }
     }

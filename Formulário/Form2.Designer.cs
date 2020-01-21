@@ -170,7 +170,7 @@
             this.Nome.MaxLength = 32767;
             this.Nome.Name = "Nome";
             this.Nome.PasswordChar = '\0';
-            this.Nome.WaterMark = "Insira seu nome completo";
+            this.Nome.PromptText = "Insira seu nome completo";
             this.Nome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Nome.SelectedText = "";
             this.Nome.SelectionLength = 0;
@@ -182,6 +182,7 @@
             this.Nome.WaterMark = "Insira seu nome completo";
             this.Nome.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Nome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.Nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nome_KeyPress);
             // 
             // Telefone
             // 
@@ -202,7 +203,7 @@
             this.Telefone.MaxLength = 15;
             this.Telefone.Name = "Telefone";
             this.Telefone.PasswordChar = '\0';
-            this.Telefone.WaterMark = "(--) ----- ----";
+            this.Telefone.PromptText = "(--) ----- ----";
             this.Telefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Telefone.SelectedText = "";
             this.Telefone.SelectionLength = 0;
@@ -215,6 +216,7 @@
             this.Telefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Telefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.Telefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Telefone_KeyPress);
+            this.Telefone.Validated += new System.EventHandler(this.Telefone_Validated);
             // 
             // DatadeNascimento
             // 
@@ -246,6 +248,7 @@
             this.DatadeNascimento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DatadeNascimento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.DatadeNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DatadeNascimento_KeyPress_1);
+            this.DatadeNascimento.Validated += new System.EventHandler(this.DatadeNascimento_Validated);
             // 
             // Endereco
             // 
@@ -266,7 +269,7 @@
             this.Endereco.MaxLength = 32767;
             this.Endereco.Name = "Endereco";
             this.Endereco.PasswordChar = '\0';
-            this.Endereco.WaterMark = "Insira seu Endereço";
+            this.Endereco.PromptText = "Insira seu Endereço";
             this.Endereco.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Endereco.SelectedText = "";
             this.Endereco.SelectionLength = 0;
@@ -298,7 +301,7 @@
             this.Usuario.MaxLength = 32767;
             this.Usuario.Name = "Usuario";
             this.Usuario.PasswordChar = '\0';
-            this.Usuario.WaterMark = "Insira o Usuário desejado";
+            this.Usuario.PromptText = "Insira o Usuário desejado";
             this.Usuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Usuario.SelectedText = "";
             this.Usuario.SelectionLength = 0;
@@ -331,7 +334,7 @@
             this.Senha.MaxLength = 32767;
             this.Senha.Name = "Senha";
             this.Senha.PasswordChar = '●';
-            this.Senha.WaterMark= "Senha no mínimo de 6 caracteres";
+            this.Senha.PromptText = "Senha no mínimo de 6 caracteres";
             this.Senha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Senha.SelectedText = "";
             this.Senha.SelectionLength = 0;
@@ -344,6 +347,7 @@
             this.Senha.WaterMark = "Senha no mínimo de 6 caracteres";
             this.Senha.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Senha.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.Senha.Validated += new System.EventHandler(this.Senha_Validated);
             // 
             // ConfirmarSenha
             // 
@@ -364,7 +368,7 @@
             this.ConfirmarSenha.MaxLength = 32767;
             this.ConfirmarSenha.Name = "ConfirmarSenha";
             this.ConfirmarSenha.PasswordChar = '●';
-            this.ConfirmarSenha.WaterMark = "Confirme a senha anterior";
+            this.ConfirmarSenha.PromptText = "Confirme a senha anterior";
             this.ConfirmarSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ConfirmarSenha.SelectedText = "";
             this.ConfirmarSenha.SelectionLength = 0;
